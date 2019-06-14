@@ -1,9 +1,6 @@
 package de.gfn.carmanagement.entity;
 
-/**
- *
- * @author tlubowiecki
- */
+//TODO Gerneric ID
 public abstract class AbstractEntity {
     
     protected int id;
