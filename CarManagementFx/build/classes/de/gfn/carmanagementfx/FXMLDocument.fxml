@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.gfn.carmanagementfx.FXMLDocumentController">
+    <children>
+        <GridPane layoutX="50.0" layoutY="30.0" prefHeight="153.0" prefWidth="404.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Vorname:" />
+                <Label text="Nachname:" GridPane.rowIndex="1" />
+                <Label text="E-Mail:" GridPane.rowIndex="2" />
+                <TextField fx:id="txtFirstname" GridPane.columnIndex="1" />
+                <TextField fx:id="txtLastname" prefHeight="27.0" prefWidth="97.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveAction" text="Speichern" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+        <TableView fx:id="tblCustomers" layoutX="50.0" layoutY="228.0" prefHeight="241.0" prefWidth="414.0">
+            <columns>
+                <TableColumn prefWidth="40.0" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+          
+                <TableColumn prefWidth="100.0" text="Vorname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstname" />
+                    </cellValueFactory>
+                </TableColumn>
+            
+                <TableColumn prefWidth="100.0" text="Nachname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastname" />
+                    </cellValueFactory>
+                </TableColumn>
+            
+                <TableColumn prefWidth="173.0" text="E-Mail">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+      <HBox layoutX="50.0" layoutY="192.0" prefHeight="27.0" prefWidth="414.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#loadFromTableAction" text="Bearbeiten" />
+            <Button mnemonicParsing="false" onAction="#newAction" text="Neu" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteAction" text="Löschen" />
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>
